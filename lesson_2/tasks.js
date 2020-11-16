@@ -67,15 +67,15 @@ let c2 = c ** 2;
 let sumOfCathetus = a2 + b2;
 let p = (a + b + c) / 2;
 let S = (p * (p - a) * (p - b) * (p - c)) ** (1 / 2);
-if (isNaN(S) || (a <= 0) || (b <= 0) || (c <= 0)) {
-    console.log("Incorrect data");
-  } else if (Number.isInteger(S)) {
-    console.log("Square of triangle: " + S);
-  } else {
-    console.log("Square of triangle: " + S.toFixed(3));
-  }
+if (isNaN(S) || a <= 0 || b <= 0 || c <= 0) {
+  console.log("Incorrect data");
+} else if (Number.isInteger(S)) {
+  console.log("Square of triangle: " + S);
+} else {
+  console.log("Square of triangle: " + S.toFixed(3));
+}
 
-if (!isNaN(a2) && !isNaN(b2) && !isNaN(c2) && (a > 0) && (b > 0) && (c > 0)) {
+if (!isNaN(a2) && !isNaN(b2) && !isNaN(c2) && a > 0 && b > 0 && c > 0) {
   if (c2 == sumOfCathetus) {
     console.log("Triangle is rectangular");
   } else if (c2 != sumOfCathetus) {
@@ -83,3 +83,29 @@ if (!isNaN(a2) && !isNaN(b2) && !isNaN(c2) && (a > 0) && (b > 0) && (c > 0)) {
   }
 }
 //task_7
+/*if...else...if statement*/
+let today = new Date();
+let time = parseInt(today.getHours());
+if (time >= 23 && time < 5) {
+  console.log("Good night!");
+} else if (time >= 5 && time < 11) {
+  console.log("Good morning!");
+} else if (time >= 11 && time < 17) {
+  console.log("Good afternoon!");
+} else {
+  console.log("Good evening!");
+}
+/*switch statement*/
+switch (true) {
+  case time >= 23 && time < 5:
+    console.log("Good night!");
+    break;
+  case time >= 5 && time < 11:
+    console.log("Good morning!");
+    break;
+  case time >= 11 && time < 17:
+    console.log("Good afternoon!");
+    break;
+  default:
+    console.log("Good evening!");
+}
