@@ -82,6 +82,7 @@ if (!isNaN(a2) && !isNaN(b2) && !isNaN(c2) && a > 0 && b > 0 && c > 0) {
     console.log("Triangle isn't rectangular");
   }
 }
+
 //task_7
 /*if...else...if statement*/
 let today = new Date();
