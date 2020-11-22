@@ -87,3 +87,25 @@ let arrDubl = [3, 6, 7, 6, -3];
 let arrUniq = [1, 5, -9, 3, 9];
 console.log(isUnique(arrDubl));
 console.log(isUnique(arrUniq));
+
+//task_7
+function lastElem(arr, x) {
+  if (x != undefined) {
+    return arr.slice(arr.length - x, arr.length);
+  }
+  return arr[arr.length - 1];
+}
+let arr = [3, 4, 10, -5];
+console.log(lastElem(arr));
+console.log(lastElem(arr, 2));
+console.log(lastElem(arr, 8));
+
+//task_8
+function getUpperCase(inputString) {
+  let arr = inputString.split(" ");
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].substring(1);
+  }
+  return arr.join(" ");
+}
+console.log(getUpperCase("i love java script"));
