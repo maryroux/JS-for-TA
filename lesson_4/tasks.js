@@ -88,3 +88,28 @@ try {
 }
 
 //task_5
+let users = new Array();
+function showUser(id) {
+  if (id < 0) {
+    throw new RangeError("ID must not be negative: " + id);
+  }
+  return { id: id };
+}
+
+function showUsers(ids) {
+  try {
+    for (let i in ids) {
+      users.push(showUser(ids[i]));
+    }
+  } catch (err) {
+    console.log(err.name + ": " + err.message);
+    let id = err.message.split(" ");
+    let temp = Number(id[id.length - 1]);
+    let newArr = ids.slice(ids.indexOf(temp) + 1, ids.length);
+    showUsers(newArr);
+  }
+}
+console.log(showUser(7));
+let arr = [-3, 4, -3, -5, 7, -2, 8];
+showUsers(arr);
+console.log(users);
