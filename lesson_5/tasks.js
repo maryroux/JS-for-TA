@@ -122,4 +122,57 @@ class Worker {
   console.log(worker1.fullName + ": " + sumSalary[0]);
   console.log(worker2.fullName + ": " + sumSalary[1]);
   console.log(worker3.fullName + ": " + sumSalary[2]);
+
+/*****************************task_5*********************************/
+class GeometricFigure {
+    getArea() {
+      return 0;
+    }
+    toString() {
+      return Object.getPrototypeOf(this).constructor.name;
+    }
+  }
+  class Triangle extends GeometricFigure {
+    constructor(baseOfTriangle, height) {
+      super();
+      this.baseOfTriangle = baseOfTriangle;
+      this.height = height;
+    }
+    getArea() {
+      let area = (this.baseOfTriangle * this.height) / 2;
+      return area;
+    }
+  }
+  class Square extends GeometricFigure {
+    constructor(side) {
+      super();
+      this.side = side;
+    }
+    getArea() {
+      return this.side * this.side;
+    }
+  }
+  class Circle extends GeometricFigure {
+    constructor(radius) {
+      super();
+      this.radius = radius;
+    }
+    getArea() {
+      return Math.PI * this.radius ** 2;
+    }
+  }
+  
+  function handleFigures(figures) {
+    let arr = new Array();
+    figures.forEach((element) => {
+      console.log("Geometric figure: " + element.toString() + " - area: " + element.getArea());
+      arr.push(element.getArea());
+    });
+    let sum = arr.reduce(function (a, b) {
+      return a + b;
+    });
+    console.log(sum);
+  }
+  let figures = [new Triangle(4, 5), new Square(7), new Circle(5)];
+  handleFigures(figures);
   
