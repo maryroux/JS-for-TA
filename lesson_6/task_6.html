@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task_6</title>
+  </head>
+  <body>
+    <input type="text" id="input1" value="Text1" />
+    <input type="text" id="input2" value="Text2" />
+    <button onclick="myFunction()">Just do it</button>
+  </body>
+  <script>
+    var input1 = document.getElementById("input1");
+    input1.value = prompt("Write some text to input1: ");
+    var input2 = document.getElementById("input2");
+    input2.value = prompt("Write some text to input2: ");
+    console.log(typeof input1.value);
+    function myFunction() {
+      let temp = input1.value;
+      input1.value = input2.value;
+      input2.value = temp;
+    }
+  </script>
+</html>

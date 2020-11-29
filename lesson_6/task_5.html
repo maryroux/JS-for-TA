@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task_5</title>
+  </head>
+  <body>
+    <h1 id="myNeader">I'am a big header!!!</h1>
+    <div id="myDiv">
+      <p>First paragraph</p>
+      <p>Second paragraph</p>
+      <p>Third paragraph</p>
+      <p>Fourth paragraph</p>
+    </div>
+    <ul id="myList">
+      <li>Make</li>
+      <li>me</li>
+      <li>horizontal!</li>
+    </ul>
+    <span>Make me invisible, please!</span>
+    <script>
+      let h = document.getElementById("myNeader");
+      h.style.backgroundColor = "lightgreen";
+      let elem = document.querySelectorAll("p");
+      elem[0].style.fontWeight = "bold";
+      elem[1].style.color = "red";
+      elem[2].style.textDecoration = "underline";
+      elem[3].style.fontStyle = "italic";
+      let count = document.querySelectorAll("ul > li");
+      document.write("<br \/>" + count[0].innerHTML + count[1].innerHTML + count[2].innerHTML);
+      let list = document.querySelector("#myList");
+      list.remove();
+      let invis = document.querySelector("span");
+      invis.style.visibility = "hidden";
+    </script>
+  </body>
+</html>

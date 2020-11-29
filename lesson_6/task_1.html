@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task_1</title>
+  </head>
+  <body>
+    <div id="test">First</div>
+    <script>
+      /*****First case*******/
+      document.getElementById("test").innerHTML = "Last";
+
+      //comment previous example to check
+      /*****Second case*****/
+      let oldElem = document.getElementById("test");
+      let newElem = document.createTextNode("Last");
+      oldElem.replaceWith(newElem);
+    </script>
+  </body>
+</html>
