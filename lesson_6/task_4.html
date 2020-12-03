@@ -7,38 +7,33 @@
   </head>
   <body>
     <ul id="list">
-      <li id="one">1</li>
-      <li id="two">2</li>
-      <li id="three">3</li>
-      <li id="four">4</li>
-      <li id="five">5</li>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
     </ul>
     <script>
-
       /***************case1********************/
-      let count = document.querySelectorAll("ul > li");
-      alert(count[0].innerHTML);
-      alert(count[4].innerHTML);
-      alert(count[1].innerHTML);
-      alert(count[3].innerHTML);
-      alert(count[2].innerHTML);
+      // let count = document.querySelectorAll("ul > li");
+      // alert(count[0].innerHTML);
+      // alert(count[4].innerHTML);
+      // alert(count[1].innerHTML);
+      // alert(count[3].innerHTML);
+      // alert(count[2].innerHTML);
 
       /*************case2******************/
-    //   let list = document.getElementById("list");
-    //   let li5 = document.createElement("li");
-    //   let li2 = document.createElement("li");
-    //   let li3 = document.createElement("li");
-    //   li5.textContent = "5";
-    //   li2.textContent = "2";
-    //   li3.textContent = "3";
-    //   list.replaceChild(li5, document.getElementById("two"));
-    //   list.replaceChild(li2, document.getElementById("three"));
-    //   list.replaceChild(li3, document.getElementById("five"));
-    //   let countRes = document.querySelectorAll("ul > li");
-    //   for (let i = 0; i < countRes.length; i++) {
-    //     alert(countRes[i].innerHTML);
-    //   }
-    
+      let arr = document.getElementById("list");
+      let elem1 = arr.children[0].innerHTML;
+      alert(elem1);
+      let elem2 = arr.children[4].innerHTML;
+      alert(elem2);
+      let elem3 = arr.children[1].innerHTML;
+      alert(elem3);
+      let elem4 = arr.children[3].innerHTML;     
+      alert(elem4);
+      let elem5 = arr.children[2].innerHTML;     
+      alert(elem5);
     </script>
   </body>
 </html>

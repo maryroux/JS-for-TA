@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task_7</title>
+  </head>
+  <body>
+    <script>
+      let bodyTag = document.body;
+      let mainClassTag = document.createElement("main");
+      mainClassTag.setAttribute("class", "mainClass check item");
+      bodyTag.prepend(mainClassTag);
+      let divTag = document.createElement("div");
+      divTag.setAttribute("id", "myDiv");
+      mainClassTag.prepend(divTag);
+      let pTag = document.createElement("p");
+      pTag.innerHTML = "First paragraph";
+      divTag.prepend(pTag);
+    </script>
+  </body>
+</html>
