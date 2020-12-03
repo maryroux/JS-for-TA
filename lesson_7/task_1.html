@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task_1</title>
+  </head>
+  <body>
+    <script>
+      let openTab = window.open("", "Window", "width=300, height=300");
+      openTab.document.write("<p>This is 'myWindow'</p>");
+      setTimeout(function () {openTab.resizeTo(500, 500);}, 2000);
+      setTimeout(function () {openTab.moveTo(200, 200);}, 2000);
+      setTimeout(function () {openTab.close();}, 2000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task_3</title>
+  </head>
+  <body>
+    <button onclick="getBlueColor()">Click to make the page blue</button>
+    <button ondblclick="getPinkColor()">
+      Double-click to make the page pink
+    </button>
+    <button onmousedown="mouseDown()" onmouseup="mouseUp()">
+      Click and hold to make the page brown
+    </button>
+    <a href="" id="linkTag">Hover over to make page yellow</a>
+    <script>
+      function getBlueColor() {
+        document.body.style.backgroundColor = "blue";
+      }
+
+      function getPinkColor() {
+        document.body.style.backgroundColor = "pink";
+      }
+
+      function mouseDown() {
+        document.body.style.backgroundColor = "brown";
+      }
+      function mouseUp() {
+        document.body.style.backgroundColor = "white";
+      }
+
+      linkTag.onmouseover = linkTag.onmouseout = handler;
+      function handler(event) {
+        if (event.type == "mouseover") {
+          document.body.style.backgroundColor = "yellow";
+        }
+        if (event.type == "mouseout") {
+          document.body.style.backgroundColor = "white";
+        }
+      }
+    </script>
+  </body>
+</html>
