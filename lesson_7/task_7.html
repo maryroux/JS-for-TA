@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task_7</title>
+  </head>
+  <body>
+    <select name="country" id="country" onchange="ChangeCountry()">
+      <option value="ger">Germany</option>
+      <option value="usa">USA</option>
+      <option value="ukr">Ukraine</option>
+    </select>
+
+    <select name="cities" id="cities" onchange="ChangeCity()"></select>
+    <p id="item"></p>
+    <script>
+      let cities = {};
+      cities["ger"] = ["Berlin", "Hamburg", "Munich"];
+      cities["usa"] = ["New-York", "Washington", "Chicago", "LA"];
+      cities["ukr"] = ["Kyiv", "Lviv", "Dnipro"];
+
+      function ChangeCountry() {
+        let countryList = document.getElementById("country");
+        let cityList = document.getElementById("cities");
+        let x = countryList.selectedIndex;
+        let selCoun = countryList.options[x].value;
+        while (cityList.options.length) {
+          cityList.remove(0);
+        }
+        let countries = cities[selCoun];
+        if (countries) {
+          for (let i = 0; i < countries.length; i++) {
+            let countryItem = new Option(countries[i], i);
+            cityList.options.add(countryItem);
+            document.getElementById("item").innerHTML = `${countryList.options[x].text}: ${cityList.options[0].text}`;
+          }
+        }
+      }
+      function ChangeCity() {
+        let countryList = document.getElementById("country");
+        let cityList = document.getElementById("cities");
+        let x = countryList.selectedIndex;
+        let y = cityList.selectedIndex;
+        document.getElementById("item").innerHTML = `${countryList.options[x].text}: ${cityList.options[y].text}`;
+      }
+    </script>
+  </body>
+</html>

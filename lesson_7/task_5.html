@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task_5</title>
+  </head>
+  <body>
+    <button id="myBtn">Live button!</button>      
+    <script>
+      myBtn.onmouseover = myBtn.onmouseout = myBtn.onclick = handler;
+      function handler(event) {
+        if (event.type == "mouseover") {
+          let d1 = document.getElementById("myBtn");
+          d1.insertAdjacentHTML("afterend", "<p>Mouse on me!</p>");
+        }
+        if (event.type == "mouseout") {
+          let d2 = document.getElementById("myBtn");
+          d2.insertAdjacentHTML("afterend", "<p>Mouse is not on me!</p>");
+        }
+        if (event.type == "click") {
+          let d3 = document.getElementById("myBtn");
+          d3.insertAdjacentHTML("afterend", "<p>I was pressed!</p>");
+        }
+      }
+    </script>
+  </body>
+</html>

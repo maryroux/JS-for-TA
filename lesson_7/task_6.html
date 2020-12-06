@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task_6</title>
+  </head>
+  <body>
+    <p id="size"></p>
+    <script>
+      window.addEventListener("resize", function () {
+        let w = window.innerWidth;
+        let h = window.innerHeight;
+        document.getElementById("size").innerHTML = `Width: ${w}, Height: ${h}`;
+      });
+    </script>
+  </body>
+</html>
