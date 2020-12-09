@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task_4</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <h3>Choose only 3 languages that you know the most:</h3>
+    <label><input type="checkbox" name="box1" value="1" class = "limitThree">Ukrainian</label><br />
+    <label><input type="checkbox" name="box2" value="1" class = "limitThree">English</label><br />
+    <label><input type="checkbox" name="box3" value="1" class = "limitThree">German</label><br />
+    <label><input type="checkbox" name="box4" value="1" class = "limitThree">French</label><br />
+    <label><input type="checkbox" name="box5" value="1" class = "limitThree">Italian</label><br />
+    <label><input type="checkbox" name="box6" value="1" class = "limitThree">Spanish</label><br />
+    <script>
+      $(".limitThree").on("change", function () {
+        let noChecked = 0;
+        $.each($(".limitThree"), function () {
+          if ($(this).is(":checked")) {
+            noChecked++;
+          }
+        });
+        if (noChecked >= 3) {
+          $.each($(".limitThree"), function () {
+            if ($(this).not(":checked").length == 1) {
+              $(this).attr("disabled", "disabled");
+            }
+          });
+        } else {
+          $(".limitThree").removeAttr("disabled");
+        }
+      });
+    </script>
+  </body>
+</html>
