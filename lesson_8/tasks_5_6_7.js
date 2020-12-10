@@ -1,24 +1,20 @@
 /*************task_5********************/
-let reg = /(\w+)\s(\w+)/; 
+let reg = /(\w+)\s(\w+)/;
 let str = 'Java Script';
 let newStr = str.replace(reg, '$2, $1');
 console.log(newStr);
 
 /******************task_6******************/
 function checkEmail(value) {
-    let result = /^[a-zA-Z0-9]+[-\w\s]+@[-\w\s]+(\.[-\w\s]+)*$/.test(value);
-    let oneSymbol = /-?/g.test(value); //не виходить перевірка про дефіс
-    console.log(result);
-    console.log(oneSymbol);
-    if (result === true && oneSymbol === true) {
-        console.log("Email is correct!");
-    } else {
-        console.log("Email is not correct!");
-    }
-    
+  let result = /^[a-zA-Z0-9]+[-\w\s]+@[-\w\s]+(\.[-\w\s]+)*$/.test(value);
+  if ((value.match(/-/g) || []).length > 1 || result == false) {
+    console.log("Email is not correct!");
+  } else {
+    console.log("Email is correct!");
+  }
 }
-checkEmail('my_ma-il-@gmail .com');
-checkEmail('#my_mail@gmail.com');
+checkEmail("my_mail@gmail.com");
+checkEmail("#my_mail@gmail.com");
 
 /***************task_7*********************/
 function checkLogin(value) {
