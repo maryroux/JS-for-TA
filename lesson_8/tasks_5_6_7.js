@@ -18,11 +18,11 @@ checkEmail("#my_mail@gmail.com");
 
 /***************task_7*********************/
 function checkLogin(value) {
-    let result = /^([a-zA-Z]+[\d]*[.]{0,1}[\d]+){2,10}/.test(value);
+    let result = /^[a-zA-Z]{1}[a-zA-Z0-9\.]{1,9}$/.test(value);
     let digit = value.match(/[\d]*[.]{0,1}[\d]+/g);
     console.log(result);
     console.log(digit);
 }
 
-checkLogin('ee1.1ret3');
+checkLogin('ee1.1ret33');
 checkLogin('ee1*1ret3');
