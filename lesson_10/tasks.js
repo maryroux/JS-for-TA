@@ -36,20 +36,34 @@ function getRandomIntInclusive(min, max) {
 }
 const delay = (i, time) =>
   new Promise((resolve) => setTimeout(() => resolve(i), time));
-function showNumbers() {
-  let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  let newArr = [];
-  arr.forEach((element) =>
-    newArr.push(new Promise((resolve) => {
-        resolve(delay(element, getRandomIntInclusive(0, 3000)));
-      })
-    )
-  );
-  Promise.all(newArr).then((res) => {
-    res.forEach((element) => console.log(element));
+const showNumbers = () =>
+  new Promise((resolve) => {
+    let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let promise = Promise.resolve(arr[0]);
+    for (let i = 1; i <= arr.length; i++) {
+      promise = promise.then((val) => {
+        console.log(val);
+        return delay(arr[i], getRandomIntInclusive(0, 3000));
+      });
+    }
+    resolve(promise);
   });
-}
 showNumbers();
 
 /***********************task_4********************/
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+const delay = (i, time) =>
+  new Promise((resolve) => setTimeout(() => resolve(i), time));
+async function showNumbers() {
+  let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  for (let i = 0; i < arr.length; i++) {
+      await delay(i, getRandomIntInclusive(0, 3000));
+      console.log(arr[i]);
+  }
+}
 
+showNumbers();
