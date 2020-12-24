@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task_2</title>
+  </head>
+  <body>
+    <button id="btn" onclick="getAuthorFunction()">Vote!</button>
+    <div id="authors"></div>
+    <script>
+      function getAuthorFunction() {
+        const ajaxRequest = new XMLHttpRequest();
+        ajaxRequest.onreadystatechange = function () {
+          let parsedData = JSON.parse(ajaxRequest.responseText);
+          let arr = [];
+          let nameList = "";
+          document.getElementById("authors").innerHTML = "";
+          for (item in parsedData) {
+            nameList = "<li>" + parsedData[item].author + "</li>";
+            document.getElementById("authors").innerHTML += nameList;
+          }
+          document.getElementById("btn").hidden = true;
+        };
+        ajaxRequest.open("GET", "books.json", true);
+        ajaxRequest.send();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task_1</title>
+  </head>
+  <body>
+    <button id="btn" onclick="getDateFunction()">Vote!</button>
+    <script>
+      function getDateFunction() {
+        const ajaxRequest = new XMLHttpRequest();
+        ajaxRequest.open("GET", "http://localhost:8000", true);
+        ajaxRequest.onreadystatechange = function () {
+          if (ajaxRequest.status != 200) {
+            alert("Error " + ajaxRequest.status + ": " + ajaxRequest.statusText);
+          } else {
+            document.getElementById("btn").childNodes[0].nodeValue = ajaxRequest.responseText;
+          }
+        };
+        ajaxRequest.send();
+      }
+    </script>
+  </body>
+</html>
