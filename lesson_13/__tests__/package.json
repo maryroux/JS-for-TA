@@ -1,0 +1,22 @@
+{
+  "name": "jest_project",
+  "jest": {
+    "verbose": true,
+    "testMatch": [ "**/?(*.)+(spec|test).js?(x)" ]
+  }, 
+  "version": "1.0.0",
+  "description": "testing with jest",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^26.6.3"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "jest"
+  ],
+  "author": "mhoria",
+  "license": "ISC"
+}
